@@ -17,7 +17,7 @@ const SignUp: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if(email && password && cpassword && password == cpassword ){
+        if(email && password && cpassword && password === cpassword ){
             let body:RegisterBody  = { email: email,password: password}
             let r = await axios.post(apiUrl.register,body)
             console.log(r)

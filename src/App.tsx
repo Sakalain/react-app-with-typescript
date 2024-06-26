@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {createContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SIgnUp';
 
-import { Provider } from 'react-redux';
-import store from './store';
 
 // import logo from './logo.svg';
 // import './App.css';
 
+// let UserContext: unknown = createContext();
+
+
+
 function App() {
+  // useEffect
   return (
-    <Provider store={store}>
-      <Router>
+      // <UserContext.Provider user={} >
+        <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -23,7 +26,8 @@ function App() {
           </Route>
         </Routes>
     </Router>
-    </Provider>
+      // </UserContext.Provider>
+      
     
   );
 }
