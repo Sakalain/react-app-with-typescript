@@ -3,20 +3,28 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
+import SignUp from './components/SIgnUp';
+
+import { Provider } from 'react-redux';
+import store from './store';
 
 // import logo from './logo.svg';
 // import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/main" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/signup" element={<SignUp />} />
           </Route>
         </Routes>
     </Router>
+    </Provider>
+    
   );
 }
 
